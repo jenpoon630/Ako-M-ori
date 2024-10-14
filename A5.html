@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ako M&#x101;ori</title>
+    <link rel="icon" type="image/x-icon" href="https://cws.auckland.ac.nz/ako/api/Logo">
+    <link rel="stylesheet" type="text/css" href="A5.css" />
+    <script defer src="A5.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <!-- a navigation bar -->
+    <table id="navBar">
+        <tr>
+            <td onclick="showHomepage()"><img id="logo" style="cursor: pointer" class="logo" src="https://cws.auckland.ac.nz/ako/api/Logo" alt="Logo" /></td>
+            <td class="icon" onclick="showHomepage()">&#127968;Home</td> <!--house-->
+            <td class="icon" onclick="showEvents()">&#128197;Calendar</td> <!--calendar-->
+            <td class="icon" onclick="showLearning()">&#128214;Game</td> <!--open book-->
+            <td class="icon" id="loginIcon" onclick="showLogin()">&#129492;Login</td> <!--bearded person-->
+            <td class="icon" onclick="showRegistration()">&#128106;Register</td> <!--family-->
+            <td class="icon" onclick="showShop()">&#128722;Shop</td> <!--trolley-->
+            <td class="icon" onclick="showGuestbook()">&#9997;Guest Book</td> <!--writing hand-->
+            <td class="icon" onclick="showLog()">&#128209;Log</td> <!--log icon-->
+        </tr>
+    </table>
+    <h1 id="Title" style="margin-top: 0px;">Ako M&#x101;ori</h1>
+    <div style="text-align:right">
+        <p id="loginText" style="display:inline">Guest</p>
+        <u id="underlinedLoginText" style="padding-right:20vw; display:inline; white-space: nowrap; cursor:default" onclick="logOut()">(Not Logged In)</u>
+    </div>
+
+    <hr>
+    <br />
+    <div id="Homepage">
+        <p>Nau mai, haere mai ki Ako M&#x101;ori. No matter where you are on your journey of language learning, we welcome you with open arms.</p>
+        <p>Our aim at Ako M&#x101;ori is to provide you with a rich and immersive platform to learn, explore and nurture your knowledge of te reo M&#x101;ori. We have curated a range of resources, tools and activities that will empower you to deepen your connection with this beautiful taonga.</p>
+        <p>As you navigate through the depths of te ao M&#x101;ori, we hope that you will find our platform as not just a learning tool, but a whare of inspiration and cultural enrichment.</p>
+        <p>Together, let us contribute to the revitalisation of te reo Māori, an essential part of Aotearoa's heritage. Kia kaha, be brave, and embrace this exciting journey.</p>
+        <p>Nau mai, haere mai, welcome to Ako M&#x101;ori.</p>
+        <img src="https://i.imgur.com/KXpsEUF.png" alt="Koru" style="display:block; margin:auto; width:35vw; height:auto" />
+        <hr>
+        <!-- <p id="serverVersion" style="text-align:center">&#169;All rights reserved.</p> -->
+        <p id="serverVersion" style="text-align:center"></p>
+    </div>
+
+
+
+
+
+    <div id="Events">
+        <table id="eventsTable">
+        </table>
+    </div>
+
+
+
+
+
+
+    <div id="Learning">
+        <p>
+            There are two sets of items; each item in the first set should correspond with an item in the second set. The first set of
+            items is displayed in the first column, and the second set is located in the thrid column. Please carefully drag each item from
+            the third columnn and drop it into the second column, ensuring that each dropped item correctly corresponds to the item in the
+            first column. Please note, once an item has been placed in the second column, it cannot be moved again.
+        </p>
+        <table id="tutorialTable">
+            <tr><td>one</td><td id="tutorialOne" ondragover="myTutorialDragOver(event)" ondrop="tutorialDrop(event)"></td><td><img src="https://i.imgur.com/KXpsEUF.png" alt="Koru" id="tutorialKoruImage" ondragstart="myTutorialDragStart(event)" style="display:block; margin:auto; width:4vw; height:auto" /></td></tr>
+            <tr><td>koru</td><td id="tutorialKoru" ondragover="myTutorialDragOver(event)" ondrop="tutorialDrop(event)"></td><td id="tutorialTahi" draggable="true" ondragstart="myTutorialDragStart(event)">tahi</td></tr>
+        </table>
+        <p style="text-align:center">
+            To practice, drag the text <em>tahi</em> to the slot corresponding to the text <em>one</em> and drag the koru image to the slot corresponding to the text <em>koru</em>.
+        </p>
+        <hr class="blackBar">
+        <h2 style="text-align:center">Real mahi time now...</h2>
+        <div style="display: flex; justify-content: space-between;">
+            <img src="https://i.imgur.com/1OWHcMQ.png" style="width: 3vw;" />
+            <img onclick="getMatchingPairs()" src="https://i.imgur.com/o2rsiBu.png" style="width: 3vw; cursor: pointer;" />
+        </div>
+        <br />
+        <p id="gameScore"></p>
+        <table id="matchingPairsTable">
+        </table>
+    </div>
+
+
+    <div id="Login" style="text-align:center">
+        <div style="padding-bottom:1%;padding-top:2%">
+            <label for="loginUsername" style="display:inline-block; width: 40.4%; text-align: left">Username:</label><br />
+            <input type="text" id="loginUsername" name="username" style="width:40%"><br />
+        </div>
+        <div style="padding-bottom:1%">
+            <label for="loginPassword" style="display:inline-block; width: 40.4%; text-align: left">Password:</label><br />
+            <input type="password" id="loginPassword" name="password" style="width:40%"><br />
+        </div>
+        <div style="display: inline-block; width: 40.5%; text-align: left">
+            <button onclick="Login()" type="button" class="ordinaryButton">Login</button>
+        </div>
+        <p id="loginTextInfo" style="font-size:10pt">Please login to continue.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div id="Registration" style="text-align:center">
+        <div style="padding-bottom:1%;padding-top:2%">
+            <label for="registrationUsername" style="display:inline-block; width: 30.4%; text-align: left">Username:</label><br />
+            <input type="text" id="registrationUsername" name="username" style="width:30%"><br />
+        </div>
+        <div style="padding-bottom:1%">
+            <label for="registrationPassword" style="display:inline-block; width: 30.4%; text-align: left">Password:</label><br />
+            <input type="password" id="registrationPassword" name="password" style="width:30%"><br />
+        </div>
+        <div style="padding-bottom:1%">
+            <label for="registrationAddress" style="display:inline-block; width: 30.4%; text-align: left">Address:</label><br />
+            <input type="text" id="registrationAddress" name="address" style="width:30%"><br />
+        </div>
+
+        <div style="display: inline-block; width: 30.5%; text-align: left">
+            <button onclick=Register() type="button" class="ordinaryButton">Register</button>
+        </div>
+        <p id="registrationText" style="font-size:10pt">Please register here.</p>
+        <img src="https://i.imgur.com/HwrG6GZ.png" alt="Community" style="width:30vw; height:auto" />
+    </div>
+
+
+
+
+
+
+
+    <div id="Shop">
+        <input id="shopSearch" type="search" onkeyup="displayFilteredItems()" style="width:100%; background-color:grey; border-width:0" placeholder="&#128269">
+        <dialog id="shopDialogBox" open="true" style="display:none"></dialog>
+        <table id="shopTable" style="border-spacing:0.1vw 3vw">
+        </table>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div id="Guestbook">
+        <h4>Please sign our guest book.</h4>
+        <p>All comments are welcome, but please be respectful.</p>
+        <textarea id="commentData" type="text" placeholder="Enter your comment here" style="width:80%;height:100px;"></textarea><br />
+        <input id="commentName" type="text" placeholder="Name" style="width:20%" /><br />
+        <div style="padding-top:0.5%">
+            <button onclick=addComment() type="button" class="ordinaryButton">Submit</button>
+        </div>
+        <h4>Recent Entries</h4>
+        <iframe id="allCommentsiframe" src="https://cws.auckland.ac.nz/ako/api/Comments"></iframe>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div id="Log" style="text-align:left">
+
+        <h1>Infographics</h1>
+        <br/>
+        <svg id="Infographics" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" onclick="addKoru()" style="cursor:pointer">
+        </svg>
+
+        <p id="logInformation" style="padding-left:0.9vw; color: aqua;"></p>
+
+        <svg>
+            <defs id="clipPaths">
+            </defs>
+        </svg>
+
+        <div id="svgKoru">
+        </div>
+    </div>
+</body>
+</html>

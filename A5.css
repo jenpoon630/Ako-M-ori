@@ -1,0 +1,141 @@
+body {
+    background: linear-gradient(to right, black, red);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-attachment: fixed;
+}
+.icon {
+    font-size: 1.3vw;
+    padding-right: 0.5vw;
+    cursor: pointer;
+}
+#navBar td:first-child {
+    height: 2vw;
+    width: 45vw;
+}
+
+.logo {
+    width: 10.5%;
+    height: auto;
+}
+hr {
+    width: 98vw;
+    border: none;
+    height: 3px;
+    color: white;
+    background-color: white;
+}
+.ordinaryButton {
+    cursor: pointer;
+}
+iframe {
+    border:1px;
+    height:400px;
+    width:30%;
+}
+
+.calendarDateIcon {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.dateWithinCalendarIcon {
+    position: absolute;
+    text-align: center;
+    font-size: 1vw;
+    top: 26%;
+    left: 25%;
+}
+
+.shopItems{
+    width:11vw;
+    height:auto;
+}
+
+.shopButton {
+    cursor: pointer;
+    color: white;
+    width: auto;
+    font-size: 1.5em;
+    background-color: orangered;
+    border-width: 0;
+    border-radius: 5px;
+}
+.blackBar {
+    width: 45vw;
+    border: none;
+    height: 1px;
+    color: white;
+    background-color: black;
+}
+#shopDialogBox {
+    cursor: pointer;
+    top: 23.5vh;
+    border-width: 0;
+    background-color: grey;
+    color: white;
+    opacity: 0.9;
+    width: 80vw;
+    border-radius: 10px;
+}
+#closeButton {
+    border-radius: inherit;
+    cursor: pointer;
+    font-size: 1.5vw;
+    opacity: inherit;
+    color: inherit;
+    background-color: inherit;
+    border-width: 0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#tutorialTable {
+    border-collapse: collapse;
+    margin: 0px auto;
+}
+
+#tutorialTable td{
+    width: 25vw;
+}
+#tutorialTable tr{
+    height:5vw;
+}
+
+#tutorialTable tr td:first-child{
+    text-align:right;
+    padding-right: 1vw;
+}
+
+#tutorialTable tr td:nth-child(2){
+    border: 2px dashed white;
+    text-align:center;
+}
+#tutorialTable tr td:nth-child(3){
+    text-align:center;
+}
+
+
+#matchingPairsTable {
+    border-collapse: collapse;
+    margin: 0 auto 2vw;
+}
+#matchingPairsTable tr {
+    height: 5vw;
+}
+#matchingPairsTable td {
+    width: 25vw;
+}
+#matchingPairsTable tr td:first-child {
+    text-align: right;
+    padding-right: 1vw;
+}
+#matchingPairsTable tr td:nth-child(2) {
+    border: 2px dashed white;
+    text-align: center;
+}
+#matchingPairsTable tr td:nth-child(3) {
+    text-align: center;
+}
